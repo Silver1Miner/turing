@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/screen/windows/Window.gd" type="Script" id=1]
+[ext_resource path="res://assets/windows/Window_Header.png" type="Texture" id=2]
+
+[node name="Window" type="Control"]
+script = ExtResource( 1 )
+
+[node name="Window" type="NinePatchRect" parent="."]
+margin_right = 160.0
+margin_bottom = 160.0
+texture = ExtResource( 2 )
+patch_margin_left = 4
+patch_margin_top = 28
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Header" type="HBoxContainer" parent="Window"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Window/Header"]
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Window/Header"]
+margin_left = 4.0
+margin_top = 13.0
+margin_right = 4.0
+margin_bottom = 27.0
+
+[node name="Close" type="TextureButton" parent="Window"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[connection signal="pressed" from="Window/Close" to="." method="_on_Close_pressed"]

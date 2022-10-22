@@ -8,13 +8,15 @@
 [ext_resource path="res://assets/button/progress-bar-over.png" type="Texture" id=6]
 
 [node name="SwitchHold" type="TextureButton"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 128.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 20 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 3 )
 texture_disabled = ExtResource( 4 )
 texture_focused = ExtResource( 3 )
+expand = true
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
@@ -26,9 +28,9 @@ valign = 1
 autowrap = true
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
-margin_top = 49.0
-margin_right = 190.0
-margin_bottom = 64.0
+margin_top = 24.0
+margin_right = 128.0
+margin_bottom = 40.0
 texture_under = ExtResource( 2 )
 texture_over = ExtResource( 6 )
 texture_progress = ExtResource( 5 )
