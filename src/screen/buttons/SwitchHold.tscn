@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/screen/buttons/SwitchHold.gd" type="Script" id=1]
+[ext_resource path="res://assets/button/progress-bar-under.png" type="Texture" id=2]
+[ext_resource path="res://assets/button/buttonLong_blue.png" type="Texture" id=3]
+[ext_resource path="res://assets/button/buttonLong_blue_pressed.png" type="Texture" id=4]
+[ext_resource path="res://assets/button/progress-bar-fill.png" type="Texture" id=5]
+[ext_resource path="res://assets/button/progress-bar-over.png" type="Texture" id=6]
+
+[node name="SwitchHold" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+texture_focused = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "HOLD"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_top = 49.0
+margin_right = 190.0
+margin_bottom = 64.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 5 )
+nine_patch_stretch = true
