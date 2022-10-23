@@ -41,8 +41,9 @@ patch_margin_bottom = 3
 
 [node name="WindowName" type="Label" parent="NinePatchRect"]
 margin_top = 5.0
-margin_right = 120.0
+margin_right = 140.0
 margin_bottom = 25.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Remote Workstation Login"
 align = 1
 valign = 1

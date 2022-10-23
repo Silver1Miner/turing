@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/screen/buttons/ScreenIcon.gd" type="Script" id=1]
 [ext_resource path="res://assets/icons/internet-mail.png" type="Texture" id=2]
+[ext_resource path="res://assets/95.tres" type="Theme" id=3]
+[ext_resource path="res://assets/fonts/Roboto-Medium.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.411765 )
+font_data = ExtResource( 4 )
 
 [node name="ScreenIcon" type="TextureButton"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
 texture_normal = ExtResource( 2 )
 expand = true
 script = ExtResource( 1 )
@@ -14,7 +22,10 @@ icon_texture = ExtResource( 2 )
 [node name="Label" type="Label" parent="."]
 margin_top = 40.0
 margin_right = 40.0
-margin_bottom = 54.0
-text = "Mail"
+margin_bottom = 59.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Icon"
 align = 1
 autowrap = true
