@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	if pressed:
 		if progress.value < 100:
 			progress.value += 2
-			if progress.value == 110:
+			if progress.value >= 100:
 				print("meter full")
 				emit_signal("meter_full")
 				pressed = false

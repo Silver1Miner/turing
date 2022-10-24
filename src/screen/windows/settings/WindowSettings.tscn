@@ -14,3 +14,5 @@ margin_bottom = 260.0
 [node name="Label" parent="." index="2"]
 margin_right = 56.0
 text = "Settings"
+
+[connection signal="logout" from="Settings" to="." method="_on_Settings_logout"]

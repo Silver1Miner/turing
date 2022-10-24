@@ -1,5 +1,6 @@
 extends Control
 
+signal logout()
 var start = false
 
 func _ready() -> void:
@@ -13,3 +14,6 @@ func _on_SoundVolume_value_changed(value: float) -> void:
 	)
 	if start:
 		$AudioStreamPlayer.play()
+
+func _on_SwitchHold_meter_full() -> void:
+	emit_signal("logout")

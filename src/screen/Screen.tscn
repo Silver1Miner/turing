@@ -40,6 +40,32 @@ custom_colors/font_color = Color( 0, 0, 0, 0.470588 )
 custom_fonts/font = SubResource( 1 )
 text = "Logged in as: Remote Connection"
 
+[node name="Instructions" type="VBoxContainer" parent="."]
+margin_left = 376.0
+margin_top = 48.0
+margin_right = 616.0
+margin_bottom = 156.0
+
+[node name="Instructions" type="Label" parent="Instructions"]
+margin_right = 240.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 0.470588 )
+custom_fonts/font = SubResource( 1 )
+text = "Instructions:"
+align = 1
+
+[node name="Instructions2" type="Label" parent="Instructions"]
+margin_top = 23.0
+margin_right = 240.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 220, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 0.470588 )
+custom_fonts/font = SubResource( 1 )
+text = "1. Train AI using 'AI Trainer'
+2. Test AI using 'Turing Test'
+3. Check Inbox for additional messages and instructions"
+autowrap = true
+
 [node name="ToSettings" parent="." instance=ExtResource( 7 )]
 margin_left = 512.0
 margin_top = 232.0
@@ -101,3 +127,4 @@ visible = false
 [connection signal="pressed" from="Icons/ToCalendar" to="." method="_on_ToCalendar_pressed"]
 [connection signal="pressed" from="Icons/ToTrainer" to="." method="_on_ToTrainer_pressed"]
 [connection signal="pressed" from="Icons/ToCalculator" to="." method="_on_ToCalculator_pressed"]
+[connection signal="logout" from="Windows/WindowSettings" to="." method="_on_WindowSettings_logout"]

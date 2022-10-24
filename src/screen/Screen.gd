@@ -1,7 +1,12 @@
 extends Control
 
+signal logout()
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if OS.has_environment("USERNAME"):
+		$UserID.text = "Logged in as: " + OS.get_environment("USERNAME")
+	else:
+		$UserID.text = "Logged in as: Remote Connection"
 
 func _on_ToSettings_pressed() -> void:
 	for node in $Windows.get_children():
@@ -27,3 +32,6 @@ func _on_ToCalculator_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowCalculator.visible = true
+
+func _on_WindowSettings_logout() -> void:
+	emit_signal("logout")
