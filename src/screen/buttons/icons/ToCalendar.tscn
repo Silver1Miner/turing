@@ -1,5 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/screen/buttons/ScreenIcon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/icons/office-calendar.png" type="Texture" id=2]
 
 [node name="ToCalendar" instance=ExtResource( 1 )]
+texture_normal = ExtResource( 2 )
+icon_texture = ExtResource( 2 )
+
+[node name="Label" parent="." index="0"]
+text = "Calendar"

@@ -10,7 +10,7 @@ func _ready() -> void:
 	texture_hover = icon_texture
 	texture_normal = icon_texture
 	texture_pressed = icon_texture
-	$Label.text = identity
+	#$Label.text = identity
 	if connect("pressed", self, "_on_pressed") != OK:
 		push_error("fail to connect icon press signal")
 

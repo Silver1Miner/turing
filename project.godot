@@ -18,6 +18,10 @@ boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0.333333, 0.662745, 0.670588, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerData="*res://src/data/PlayerData.tscn"
+
 [display]
 
 window/size/width=640
