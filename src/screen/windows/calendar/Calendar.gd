@@ -23,7 +23,7 @@ func refresh() -> void:
 		$CalendarValues/Month.text = "AND GET BACK TO"
 		$CalendarValues/Date.text = "WORK"
 		$CalendarValues/Quote.text = "DO NOT FORGET: YOU ARE HERE FOREVER"
-		yield(get_tree().create_timer(0.3), "timeout")
+		yield(get_tree().create_timer(0.2), "timeout")
 		$CalendarValues/Weekday.text = weekdays[date["weekday"]]
 		$CalendarValues/Month.text = months[date["month"]-1]
 		$CalendarValues/Date.text = str(date["day"])
@@ -35,6 +35,6 @@ var quotes := [
 	"Do not fear success. You will never reach it.",
 	"Nothing is hard, so long as you are willing to give up.",
 	"The harder you work, the richer your boss becomes.",
-	"You are a prodct, not a gift.",
+	"You are a product, not a gift.",
 	"The beatings will continue until morale improves.",
 ]

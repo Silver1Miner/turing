@@ -28,6 +28,7 @@ func _on_ToCalendar_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowCalendar.visible = true
+	$Windows/WindowCalendar/Calendar.refresh()
 
 func _on_ToCalculator_pressed() -> void:
 	for node in $Windows.get_children():

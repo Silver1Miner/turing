@@ -7,7 +7,7 @@
 [ext_resource path="res://src/screen/buttons/SwitchHold.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/screen/windows/chat/CRT.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
 
 uniform int amount = 60;
@@ -22,10 +22,10 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+shader = SubResource( 7 )
 shader_param/amount = 60
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=8]
 code = "shader_type canvas_item;
 
 uniform bool hide = false;
@@ -45,7 +45,7 @@ void fragment(){
 }"
 
 [sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 3 )
+shader = SubResource( 8 )
 shader_param/hide = false
 shader_param/color = Color( 1, 1, 1, 1 )
 shader_param/strength = 0.2
@@ -168,14 +168,16 @@ Change views to monitor the physical server on which the AI program is running."
 [node name="Label" type="Label" parent="Panels/Instructions"]
 margin_top = 184.0
 margin_right = 200.0
-margin_bottom = 197.0
+margin_bottom = 199.0
+rect_min_size = Vector2( 0, 15 )
 text = "DEBUG MESSAGES"
 align = 1
+valign = 2
 
 [node name="Debug" type="Label" parent="Panels/Instructions"]
-margin_top = 201.0
+margin_top = 203.0
 margin_right = 200.0
-margin_bottom = 221.0
+margin_bottom = 223.0
 rect_min_size = Vector2( 0, 20 )
 align = 1
 

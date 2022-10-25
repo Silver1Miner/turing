@@ -12,6 +12,5 @@ func _on_Settings_logout() -> void:
 
 func _on_Chat_ending_reached(ending_id: int):
 	emit_signal("ending_reached", ending_id)
-	$Chat.current_page = 0
-	$Chat.update_display()
+	$Chat.refresh()
 	visible = false
