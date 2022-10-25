@@ -35,3 +35,8 @@ func _on_ToCalculator_pressed() -> void:
 
 func _on_WindowSettings_logout() -> void:
 	emit_signal("logout")
+
+func _on_ToChat_pressed() -> void:
+	for node in $Windows.get_children():
+		node.visible = false
+	$Windows/WindowChat.visible = true

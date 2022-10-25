@@ -12,7 +12,7 @@ func change_label(new_text: String) -> void:
 func _process(_delta: float) -> void:
 	if pressed:
 		if progress.value < 100:
-			progress.value += 2
+			progress.value += 1
 			if progress.value >= 100:
 				print("meter full")
 				emit_signal("meter_full")

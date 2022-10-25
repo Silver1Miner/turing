@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/windows/Windows_Progress_Fill.png" type="Texture" id=2]
 [ext_resource path="res://assets/95.tres" type="Theme" id=3]
 [ext_resource path="res://assets/windows/Windows_Inner_Frame.png" type="Texture" id=4]
-[ext_resource path="res://assets/windows/Windows_Inner_Frame_Inverted.png" type="Texture" id=5]
+[ext_resource path="res://assets/windows/Windows_Toggle_Active.png" type="Texture" id=5]
 
 [node name="SwitchHold" type="Button"]
 margin_right = 128.0
@@ -22,7 +22,7 @@ texture_under = ExtResource( 5 )
 texture_over = ExtResource( 4 )
 texture_progress = ExtResource( 2 )
 nine_patch_stretch = true
-stretch_margin_left = 3
-stretch_margin_top = 3
-stretch_margin_right = 3
-stretch_margin_bottom = 3
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4

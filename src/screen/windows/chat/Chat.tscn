@@ -1,0 +1,256 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/95.tres" type="Theme" id=1]
+[ext_resource path="res://src/screen/windows/chat/Chat.gd" type="Script" id=2]
+[ext_resource path="res://assets/windows/Windows_Inner_Frame.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/vladislav-muslakov-CwIU33KGToc-unsplash.jpg" type="Texture" id=4]
+[ext_resource path="res://src/screen/buttons/SwitchHold.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/screen/windows/chat/CRT.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform int amount = 60;
+
+void fragment()
+{
+	vec2 grid_uv = round(UV * float(amount)) / float(amount);
+	
+	vec4 text = texture(TEXTURE, grid_uv);
+	
+	COLOR = text;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/amount = 60
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+uniform int amount = 60;
+
+void fragment()
+{
+	vec2 grid_uv = round(UV * float(amount)) / float(amount);
+	
+	vec4 text = texture(TEXTURE, grid_uv);
+	
+	COLOR = text;
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/amount = 60
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform bool hide = false;
+uniform vec4 color : hint_color = vec4(1);
+uniform float strength = 0.2;
+
+void fragment(){
+	vec4 pixel = texture(SCREEN_TEXTURE, SCREEN_UV);
+        COLOR = pixel;
+	if (hide == false){ 
+		
+		vec3 grayscale_value = vec3(dot(pixel.rgb, vec3(0.299, 0.587, 0.114)));
+		float range = 1.0 - step(distance(pixel.rgb, color.rgb), strength);
+		COLOR.rgb = mix(pixel.rgb, grayscale_value, range);
+	}
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 3 )
+shader_param/hide = false
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/strength = 0.2
+
+[node name="Chat" type="Control"]
+margin_right = 510.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 510, 230 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_top = 201.0
+margin_right = 300.0
+margin_bottom = 230.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+margin_left = 304.0
+margin_right = 514.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+margin_left = 304.0
+margin_top = 184.0
+margin_right = 514.0
+margin_bottom = 230.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Panels" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 10
+
+[node name="Display" type="VBoxContainer" parent="Panels"]
+margin_right = 300.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 6
+
+[node name="Image" type="TextureRect" parent="Panels/Display"]
+material = SubResource( 2 )
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 290, 200 )
+expand = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panels/Display/Image"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Choices" type="HBoxContainer" parent="Panels/Display"]
+margin_top = 206.0
+margin_right = 300.0
+margin_bottom = 226.0
+alignment = 1
+
+[node name="Button1" type="Button" parent="Panels/Display/Choices"]
+margin_left = 4.0
+margin_right = 74.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 70, 20 )
+
+[node name="Button2" type="Button" parent="Panels/Display/Choices"]
+margin_left = 78.0
+margin_right = 148.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 70, 20 )
+
+[node name="Button3" type="Button" parent="Panels/Display/Choices"]
+margin_left = 152.0
+margin_right = 222.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 70, 20 )
+
+[node name="Button4" type="Button" parent="Panels/Display/Choices"]
+margin_left = 226.0
+margin_right = 296.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 70, 20 )
+
+[node name="Instructions" type="VBoxContainer" parent="Panels"]
+margin_left = 310.0
+margin_right = 510.0
+margin_bottom = 226.0
+
+[node name="Instructions" type="RichTextLabel" parent="Panels/Instructions"]
+margin_right = 200.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 200, 180 )
+bbcode_enabled = true
+bbcode_text = "[center]TURING IMITATION TEST [/center]
+[center]Instructions[/center]
+"
+text = "TURING IMITATION TEST 
+Instructions
+"
+
+[node name="Label" type="Label" parent="Panels/Instructions"]
+margin_top = 184.0
+margin_right = 200.0
+margin_bottom = 197.0
+text = "DEBUG MESSAGES"
+align = 1
+
+[node name="Debug" type="Label" parent="Panels/Instructions"]
+margin_top = 201.0
+margin_right = 200.0
+margin_bottom = 221.0
+rect_min_size = Vector2( 0, 20 )
+align = 1
+
+[node name="SwitchHold" parent="." instance=ExtResource( 5 )]
+margin_left = 344.0
+margin_top = 136.0
+margin_right = 472.0
+margin_bottom = 160.0
+text = "HOLD TO SWITCH VIEW"
+
+[node name="CameraView" type="NinePatchRect" parent="."]
+margin_right = 300.0
+margin_bottom = 230.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Panel" type="Panel" parent="CameraView"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Image" type="TextureRect" parent="CameraView"]
+material = SubResource( 5 )
+margin_left = 6.0
+margin_top = 8.0
+margin_right = 294.0
+margin_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 290, 200 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="ColorRect" type="ColorRect" parent="CameraView/Image"]
+material = SubResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Effect" parent="CameraView/Image" instance=ExtResource( 6 )]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CameraView/Image"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="CameraView"]
+margin_left = 6.0
+margin_top = 192.0
+margin_right = 294.0
+margin_bottom = 221.0
+align = 1
+
+[connection signal="pressed" from="Panels/Display/Choices/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Panels/Display/Choices/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Panels/Display/Choices/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Panels/Display/Choices/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="meter_full" from="SwitchHold" to="." method="_on_SwitchHold_meter_full"]

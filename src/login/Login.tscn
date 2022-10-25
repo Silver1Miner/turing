@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/icon-transparent.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/Roboto-Black.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/Windows_Screen.png" type="Texture" id=4]
