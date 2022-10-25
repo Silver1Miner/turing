@@ -1,6 +1,7 @@
 extends Control
 
 signal logout()
+signal ending_reached(ending_id)
 
 func _ready() -> void:
 	if OS.has_environment("USERNAME"):
@@ -40,3 +41,6 @@ func _on_ToChat_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowChat.visible = true
+
+func _on_WindowChat_ending_reached(ending_id):
+	emit_signal("ending_reached", ending_id)
