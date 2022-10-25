@@ -50,7 +50,9 @@ text = "Remote Workstation Login"
 align = 1
 valign = 1
 
-[node name="Title" type="Label" parent="NinePatchRect"]
+[node name="LoginPage" type="Control" parent="NinePatchRect"]
+
+[node name="Title" type="Label" parent="NinePatchRect/LoginPage"]
 margin_left = 20.0
 margin_top = 40.0
 margin_right = 460.0
@@ -59,7 +61,7 @@ custom_fonts/font = SubResource( 1 )
 text = "TURING IMITATION"
 align = 1
 
-[node name="Label" type="Label" parent="NinePatchRect"]
+[node name="Label" type="Label" parent="NinePatchRect/LoginPage"]
 margin_left = 300.0
 margin_top = 220.0
 margin_right = 480.0
@@ -70,23 +72,54 @@ text = "© 2022 Jack Anderson  "
 align = 2
 valign = 2
 
-[node name="Start" type="Button" parent="NinePatchRect"]
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/LoginPage"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 220.0
+margin_top = 100.0
+margin_right = 260.0
+margin_bottom = 140.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Login" type="Button" parent="NinePatchRect/LoginPage"]
 margin_left = 160.0
 margin_top = 160.0
 margin_right = 320.0
 margin_bottom = 200.0
 text = "LOGIN"
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-texture = ExtResource( 1 )
-expand = true
+[node name="Version" type="Label" parent="NinePatchRect/LoginPage"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 221.0
+margin_right = 180.0
+margin_bottom = 240.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = " v0.1.0"
+valign = 2
 
-[connection signal="pressed" from="NinePatchRect/Start" to="." method="_on_Start_pressed"]
+[node name="TOSPage" type="Control" parent="NinePatchRect"]
+visible = false
+
+[node name="Label" type="Label" parent="NinePatchRect/TOSPage"]
+margin_left = 20.0
+margin_top = 40.0
+margin_right = 460.0
+margin_bottom = 180.0
+text = "By using Turing Informatics Remote Workstation you acknowledge that you are subject to the Turing Informatics Remote Workstation use policy, where-in all activities that occur within the Worktation are subject to monitoring and recording. You further agree to focus solely on your work when using the workstation, and are therefore required to abide by standard work policies to: (1) work in isolation so that other individuals may not intervene in your work, (2) work with headphones so that other audio will not distract you, (3) work with a secure internet connection so that all monitoring software can maintain real-time tracking of your current situation. You acknowledge that by pressing accept you are bound to the above agreements and fully culpable for any violations."
+align = 1
+autowrap = true
+
+[node name="Start" type="Button" parent="NinePatchRect/TOSPage"]
+margin_left = 160.0
+margin_top = 190.0
+margin_right = 320.0
+margin_bottom = 230.0
+text = "ACCEPT"
+
+[connection signal="pressed" from="NinePatchRect/LoginPage/Login" to="." method="_on_Login_pressed"]
+[connection signal="pressed" from="NinePatchRect/TOSPage/Start" to="." method="_on_Start_pressed"]

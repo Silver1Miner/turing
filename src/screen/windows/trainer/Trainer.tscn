@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/95.tres" type="Theme" id=1]
 [ext_resource path="res://src/screen/windows/trainer/Trainer.gd" type="Script" id=2]
 [ext_resource path="res://assets/windows/Windows_Inner_Frame.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/vladislav-muslakov-CwIU33KGToc-unsplash.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/images/download.jpg" type="Texture" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -176,9 +176,9 @@ bbcode_text = "[center]AI AUDIO-VISUAL TRAINING[/center]
 
 [center]Instructions[/center]
 "
-text = "[center]AI AUDIO-VISUAL TRAINING[/center]
+text = "AI AUDIO-VISUAL TRAINING
 
-[center]Instructions[/center]
+Instructions
 "
 
 [node name="Label" type="Label" parent="Panels/Instructions"]

@@ -5,7 +5,7 @@ onready var from = $Panels/Content/From/FromLabels/From
 onready var subject = $Panels/Content/Subject/SubjectLabels/Subject
 onready var content = $Panels/Content/Body/Message
 
-export var character_limit = 30
+export var character_limit = 38
 export var current_hide = 3
 signal new_message()
 
@@ -45,147 +45,88 @@ func _on_Headers_item_selected(index: int) -> void:
 
 var emails = [
 	{
-		"title": "ALERT: SECURITY BREACH",
-		"from": "Chief of Security",
+		"title": "",
+		"from": "",
 		"text":
-"""ALL PERSONNEL ARE TO LEAVE THE FACILITY AT ONCE. THIS IS NOT A DRILL.
-
-SECURITY PERSONNEL MUST EVACUATE VIA THE NEAREST ELEVATOR.
-
-THIS IS NOT A DRILL.""",
-	},
-	{
-		"title": "Security Reminder",
-		"from": "Chief of Security",
-		"text":
-"""Reminder to all personnel:
-
-We are guests of this facility, invited to serve a very specific purpose.
-
-Respect the privacy of our clients. NEVER attempt to unlock systems that are not in your jurisdiction.""",
-	},
-	{
-		"title": "Camera Pass",
-		"from": "Security Officer Briggs",
-		"text": [
-"""Hey, sorry, but I just realized that camera 2 is locked by default and you never got the security passcode.
-
-Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad:
-1234
-
-Yes, I know, not a very secure passcode. It's not up to us unfortunately.
+"""
 """,
-"""Hey, sorry, but I just realized that camera 2 is locked by default and you never got the security passcode.
-
-Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad:
-2345""",
-"""Hey, sorry, but I just realized that camera 2 is locked by default and you never got the security passcode.
-
-Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad:
-3456""",
+	},
+	{
+		"title": "",
+		"from": "",
+		"text":
+"""
+""",
+	},
+	{
+		"title": "",
+		"from": "",
+		"text": [
+"""
+""",
+"""
+""",
+"""
+""",
 ]
 	},
 	{
-		"title": "Orientation",
-		"from": "Security Officer Briggs",
-		"text":
-"""Hello, and welcome to the Rocket Security Team!
-
-The job is really simple: use the CCTV window to keep an eye on the security cameras and report any suspicious activity.
-
-Your computer terminal should already be set up for you. Just keep watch on cameras 1 and 2.
-
-The terminal also contains a camera 3, but ignore that one. It's not under your jursidiction.
-
--Briggs""",
-	},
-	{
-		"title": "Changes to Email System",
+		"title": "Turing Informatics Remote Orientation",
 		"from": "Human Resources",
 		"text":
-"""Following the success of our pilot program in which we disabled reply and forwarding functions of email clients, we are proud to announce we have expanded the program by replacing all email clients with new receipt-only inbox systems.
+"""Welcome to the Turing Informatics (TI) Remote Worker Program.
 
-With these new clients, employees are ONLY able to receive messages, without ability to reply, forward, or send messages.
+Your job is to train our Artificial Intelligence (AI) systems by providing input data through the Turing AI Training Interface.
+
+Your remote workstation has already been configured for you. You may begin work by selecting the 'Turing' desktop icon to open the AI Training Interface.
+
+--
+This is an automated message from an unattended inbox. Do not reply.
+""",
+	},
+		{
+		"title": "Artificial Intelligence Quick Start",
+		"from": "Turing Informatics",
+		"text":
+"""All modern artificial intelligence (AI) can currently be reduced to a simple concept: input numbers into a complicated formula to generate output numbers.
+
+The power of AI comes from (1) using unimaginably complex formulas, and (2) using unimaginably complex mappings of input and output numbers to non-numeric data, such as pictures or words.
+
+'AI Training' is the tuning of the mathematical formula on known inputs and known outputs, in hopes that the formula will generate desired outputs for arbitrary inputs.
+
+For an overly simplistic illustrative example, consider the formula y = a * x + b. The input is x, the output is y, and a and b are the model parameters. 'AI Training' is feeding a large number of (x, y) pairs to determine the best possible values for a and b. The input and output numbers x and y can then be assigned to non-numeric values, such as words or phrases. So a phrase 'hello, how are you?' might be assigned to a number x, which is then modified by parameters and b to produce an output number y, which is assigned to a phrase 'very good, thank you.'
+
+Of course, real practical AI are far more complex than this simple example, the most powerful AI systems featuring millions to billions of internal parameters, and millions to billions of number-object mappings, but the same principle continues to apply to all modern systems.
+
+Note, however, that no matter how complicated we make the models or how complicated we make the mappings or the formulas, there is nowhere that the concept of 'thinking' actually appears. Though the system is unimaginably complex, it is still, in principle, completely deterministic.
+
+Some might argue that this means that AI can never truly 'think.' However, it is the position of Turing Informatics that this does not mean AI does not 'think,' but that 'thinking' in principle reduces to mathematical equations. In other words, even the 'thinking' of real intelligences like you and me are in fact illusions created by the complexity of the mathematical equations running in our heads. Simply put, our thinking is as fake as that of AI.
+""",
+	},
+	{
+		"title": "Glossary of Terminology used in Our Business",
+		"from": "Turing Informatics",
+		"text":
+"""Artificial Intelligence (AI): the ability of machine systems to perform tasks that normally require human intelligence.
+
+Turing Test: a test of a machine's ability to exhibit behavior indistinguishable from a human. Named for Alan Turing, who in 1950 published a proposal for the first such test, which he named 'the imitation game.''
+
+Machine: a system having several parts, each with a definite function, which together performs a particular task.
+
+Human: a featherless biped with broad flat nails.
+""",
+	},
+	{
+		"title": "Reminders concerning email clients on remote workstations",
+		"from": "Human Resources",
+		"text":
+"""Following detection of inappropriate behavior by malicious agents in the Remote Worker program, Human Resources is sending out this reminder that Remote Worker email clients are intended to be receipt-only inboxes, without the ability to reply, forward, or send messages. This is an official company policy. Any attempt to bypass these restrictions and restore removed functionality to the email client is grounds for immediate termination.
+
+All activities on remote workstations are monitored at all times.
 
 Any complaints or concerns can be sent or forwarded to Human Resources.
 
 --
 This is an automated message from an unattended inbox. Do not reply.""",
 	},
-	{
-		"title": "To: Rocket Security LLC",
-		"from": "Office of the COO",
-		"text":
-"""I have been reviewing our contract, and would like to raise some concerns with respect to your hiring and assignment standards.
-
-Our company handles very confidential information, and moreover, some of the services we require from our security contractors involve a certain degree of discretion.
-
-We ask that you keep this in mind when making decisions on which security officers to assign to our offices. We do NOT want a repeat of what happened at the 'Gaslit' satellite office.
-
-If an unqualified officer is used to terminate an employee, said officer may need to be terminated as well, to maintain confidentiality.
-
---
-B. Russel
-Chief Operations Officer""",
-	},
-	{
-		"title": "A Warning",
-		"from": "Old Man",
-		"text":
-["""Don't try it. They're on the lookout for 'temporal paradoxes.'
-
-They WILL notice.""",
-"""Seriously, do not try it. They WILL notice a 'temporal paradox.'
-
-Just play along.""",
-"""I am absolute serious. They are watching for 'temporal paradoxes.'
-
-They WILL notice if you know something that you shouldn't know.""",
-]
-	},
-	{
-		"title": "Missing Security Equipment",
-		"from": "Chief of Security",
-		"text":
-"""Recently a piece of level 5 security equipment was reported missing from its security station.
-
-Needless to say, it is completely unaccetable to have such a sensitive piece of equipment unaccounted for. The security officer in charge has already been terminated.
-
-If any security officer finds the missing equipment, return it to its designated security station immediately.""",
-	},
-		{
-		"title": "Kaprekar's Constant",
-		"from": "You",
-		"text":
-"""1. Take any four-digit number using at least two different digits. Leading zeroes allowed.
-2. Arrange the digits in descending order and ascending order to form two numbers, adding leading zeroes as necessary.
-3. Subtract the smaller number from the bigger number.
-4. Return to step 2 and repeat.
-
-When the series converges, I will meet you in the lounge. You know what must be done.""",
-	},
-		{
-		"title": "Re: Missing Mannequins",
-		"from": "Facility Operations Manager",
-		"text":
-"""Long-term storage reports that several display mannequins previously loaned out to labs 42, 46, and 49 are still unaccounted for.
-
-If anyone should find a mannequin, please report its location to security immediately. For your own personal safety, DO NOT handle the mannequins yourself.
-
---
-This is an automated message from an unattended inbox. Do not reply.""",
-},
-		{
-		"title": "Return to Electric Lighting",
-		"from": "Facility Operations Manager",
-		"text":
-"""Good News!
-
-Following extensive feedback, the facility has reverted from gas powered lighting back to electric powered lighting.
-
-This decision was not influenced by any rumors of gas poisoning or missing personnel, which, as we continue to remind you, are false.
-
---
-This is an automated message from an unattended inbox. Do not reply.""",
-},
 ]

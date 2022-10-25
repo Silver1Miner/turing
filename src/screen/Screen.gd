@@ -42,6 +42,7 @@ func _on_ToChat_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowChat.visible = true
+	$Windows/WindowChat/Chat.update_display()
 
 func _on_WindowChat_ending_reached(ending_id):
 	emit_signal("ending_reached", ending_id)
