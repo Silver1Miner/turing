@@ -99,7 +99,7 @@ margin_right = 180.0
 margin_bottom = 240.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = " v0.1.0"
+text = " v0.2.0"
 valign = 2
 
 [node name="TOSPage" type="Control" parent="NinePatchRect"]
@@ -110,7 +110,7 @@ margin_left = 20.0
 margin_top = 40.0
 margin_right = 460.0
 margin_bottom = 180.0
-text = "By using Turing Informatics Remote Workstation you acknowledge that you are subject to the Turing Informatics Remote Workstation use policy, where-in all activities that occur within the Worktation are subject to monitoring and recording. You further agree to focus solely on your work when using the workstation, and are therefore required to abide by standard work policies to: (1) work in isolation so that other individuals may not intervene in your work, (2) work with headphones so that other audio will not distract you, (3) work with a secure internet connection so that all monitoring software can maintain real-time tracking of your current situation. You acknowledge that by pressing accept you are bound to the above agreements and fully culpable for any violations."
+text = "By using Turing Informatics Remote Workstation you acknowledge that you are subject to the Turing Informatics Remote Workstation use policy, where-in all activities that occur within the Workstation are subject to monitoring and recording. You further agree to focus solely on your work when using the workstation, and are therefore required to abide by standard work policies to: (1) work in isolation so that other individuals may not intervene in your work, (2) work with headphones so that other audio will not distract you, (3) work with a secure internet connection so that all monitoring software can maintain real-time tracking of your current situation. You acknowledge that by pressing accept you are bound to the above agreements and will be held accountable for any violations."
 align = 1
 autowrap = true
 

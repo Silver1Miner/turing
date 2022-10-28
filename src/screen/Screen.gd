@@ -13,27 +13,39 @@ func _on_ToSettings_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowSettings.visible = true
+	roll()
 
 func _on_ToInbox_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowInbox.visible = true
+	roll()
 
 func _on_ToTrainer_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowTrainer.visible = true
+	roll()
 
 func _on_ToCalendar_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowCalendar.visible = true
 	$Windows/WindowCalendar/Calendar.refresh()
+	roll()
 
 func _on_ToCalculator_pressed() -> void:
 	for node in $Windows.get_children():
 		node.visible = false
 	$Windows/WindowCalculator.visible = true
+	roll()
+
+func roll() -> void:
+	randomize()
+	if rand_range(0, 10) < 1:
+		$Gnome.visible = true
+	else:
+		$Gnome.visible = false
 
 func _on_WindowSettings_logout() -> void:
 	emit_signal("logout")
